@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ItecSurApp.views.carreras;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,13 @@ namespace ItecSurApp.views.inicio
             App.MasterDet.IsPresented = false;
 
             await App.MasterDet.Detail.Navigation.PushAsync(new PeriodoPage());
+        }
+
+        private async void btnCarrera_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+
+            await App.MasterDet.Detail.Navigation.PushAsync(new CarreraPage());
         }
     }
 }
