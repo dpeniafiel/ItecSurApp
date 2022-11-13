@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ItecSurApp.views.inicio.InicioDetail" NavigationPage.HasNavigationBar="True" Title="ITECSUR">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid RowDefinitions="*,Auto">
+                <Image Grid.Row="0" 
+             Source="Model3" 
+             Aspect="AspectFill" />
+            </Grid>
+
+            <!-- 2. Description-->
+            <Frame Grid.Row="1" Margin="0,-35,0,25" CornerRadius="30" HasShadow="False">
+                <Grid RowDefinitions="Auto,Auto,*">
+                    <Label Grid.Row="0" LineHeight="1.5" FontAttributes="Bold" VerticalOptions="Start" HorizontalTextAlignment="Center" FontSize="{OnPlatform iOS='25', Android='20'}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="App de inscripciones ITECSUR" TextColor="DarkGray" FontSize="Title" FontAttributes="Bold"/>
+                                <Span Text="&#10;INSTITUTO SUPERIOR UNIVERSITARIO COMPU SUR" FontSize="Subtitle" TextColor="gray"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </Frame>
+
+
+            <!-- Description-->
+            <Label Grid.Row="1" Text="El ITECSUR es una familia, una familia compuesta por nuestros estudiantes, docentes y personal administrativo, siendo este el núcleo vital de nuestro instituto&#10;styles. "
+       FontAttributes="Bold" TextColor="DarkGray"  LineHeight="1.4" Margin="30,0" FontSize="Subtitle"
+       HorizontalTextAlignment="Center"/>
+
+            <!-- Rounded Button-->
+            <Button Grid.Row="2" CornerRadius="5" HeightRequest="200" WidthRequest="200"
+        ImageSource="itecsur.png"  HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,15"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
