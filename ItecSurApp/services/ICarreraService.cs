@@ -10,7 +10,7 @@ namespace ItecSurApp.services
     public interface ICarreraService
     {
         [Get("/carreras/")]
-        Task<AppResponseModel<CarreraModel>> GetCarreras();
+        Task<AppResponseModel<List<CarreraModel>>> GetCarreras();
 
         [Get("/carreras/{id}")]
         Task<AppResponseModel<CarreraModel>> GetCarrera(int id);
