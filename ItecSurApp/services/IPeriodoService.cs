@@ -10,7 +10,7 @@ namespace ItecSurApp.services
     public interface IPeriodoService
     {
         [Get("/periodos/")]
-        Task<AppResponseModel<PeriodoModel>> GetPeriodos();
+        Task<AppResponseModel<List<PeriodoModel>>> GetPeriodos();
 
         [Get("/periodos/{id}")]
         Task<AppResponseModel<PeriodoModel>> GetPeriodo(int id);

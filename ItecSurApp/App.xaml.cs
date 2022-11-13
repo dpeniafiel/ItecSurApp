@@ -13,7 +13,7 @@ namespace ItecSurApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new InicioPage());
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()
