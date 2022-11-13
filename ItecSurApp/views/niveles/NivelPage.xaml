@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ItecSurApp.views.carreras.CarreraPage" 
-             NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False" 
-             Title="Carreras académicos"
+             x:Class="ItecSurApp.views.nivel.NivelPage"
+              NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False" 
+             Title="Niveles Académicos"
              >
     <ContentPage.Content>
         <StackLayout>
@@ -25,7 +25,6 @@
             <Button x:Name="btnNuevo" Text="Nuevo periodo" Clicked="btnNuevo_Clicked" BackgroundColor="#212121" TextColor="White"
                 CornerRadius="50" Margin="16"
                 ></Button>
-
 
 
         </StackLayout>

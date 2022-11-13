@@ -1,5 +1,7 @@
 ﻿using ItecSurApp.views.inicio;
+using ItecSurApp.views.jornadas;
 using ItecSurApp.views.login;
+using ItecSurApp.views.nivel;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,7 +15,7 @@ namespace ItecSurApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new JornadaPage());
         }
 
         protected override void OnStart()

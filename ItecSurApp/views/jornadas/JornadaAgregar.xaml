@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ItecSurApp.views.jornadas.JornadaAgregar"
+              NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False" 
+               Title="Nuevo Jornada"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*">
+
+                <Label Text="Periodo:" Grid.Row="1" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Picker x:Name="cmbNivel" Title="Seleccione uno" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                        ItemDisplayBinding="{Binding nombre}" >
+
+                </Picker>
+
+                <Label Text="Nombre:" Grid.Row="2" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtNombre" IsEnabled="True" Placeholder="Nombre" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+
+
+                <Button x:Name="btnGuardar" Text="AÑADIR" Clicked="btnGuardar_Clicked" BackgroundColor="DarkGreen" TextColor="LightGray" Grid.Row="3" Grid.Column="0"/>
+                <Button x:Name="btnCancelar" Text="Cancelar" Clicked="btnCancelar_Clicked" BackgroundColor="Gray" TextColor="white" Grid.Row="3" Grid.Column="1"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
