@@ -28,7 +28,7 @@ namespace ItecSurApp.views.periodos
             periodoModel.nombre= txtNombre.Text;
             periodoModel.fecha_inicio = txtFechaInicio.Date.ToString("yyyy-MM-dd");
             periodoModel.fecha_fin = txtFechaFin.Date.ToString("yyyy-MM-dd");
-                periodoModel.estado = "ACTIVO";
+            periodoModel.estado = "ACTIVO";
             await periodoService.PostPeriodo(periodoModel);
             await DisplayAlert("CORRECTO", "Registro ingresado con éxito", "Aceptar");
             await Navigation.PushAsync(new PeriodoPage());

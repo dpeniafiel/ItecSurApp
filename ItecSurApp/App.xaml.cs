@@ -1,4 +1,5 @@
-﻿using ItecSurApp.views.inicio;
+﻿using ItecSurApp.views.carreras;
+using ItecSurApp.views.inicio;
 using ItecSurApp.views.login;
 using System;
 using Xamarin.Forms;
@@ -13,7 +14,7 @@ namespace ItecSurApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new InicioPage());
+            MainPage = new NavigationPage(new CarreraPage());
         }
 
         protected override void OnStart()

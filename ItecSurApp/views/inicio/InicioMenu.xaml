@@ -7,7 +7,7 @@
         <StackLayout Orientation="Vertical">
 
             <Button Text="Periodo" x:Name="btnPeriodo" BackgroundColor="White" ImageSource="icono.png" Clicked="btnPeriodo_Clicked" />
-            <Button Text="Carrera" x:Name="btnCarrera" BackgroundColor="White" ImageSource="icono.png" />
+            <Button Text="Carrera" x:Name="btnCarrera" BackgroundColor="White" ImageSource="icono.png" Clicked="btnCarrera_Clicked"/>
             <Button Text="Nivel" x:Name="btnNivel" BackgroundColor="White" ImageSource="icono.png" />
             <Button Text="Jornada" x:Name="btnJornada" BackgroundColor="White" ImageSource="icono.png" />
             <Button Text="Inscripcion" x:Name="btnInscripcion" BackgroundColor="White" ImageSource="icono.png" />
