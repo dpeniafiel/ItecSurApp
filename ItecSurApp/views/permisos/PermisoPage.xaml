@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ItecSurApp.views.permisos.PermisoPage" NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False" 
+             Title="Permisos">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Perfil:" FontAttributes="Bold" FontSize="Subtitle" Margin="8"/>
+                <Picker x:Name="cmbPerfil" Title="Seleccione uno" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="8"
+                        ItemDisplayBinding="{Binding nombre}" SelectedIndexChanged="cmbPerfil_SelectedIndexChanged" />
+                <Label Text="Permisos asignados:"  FontAttributes="Bold" FontSize="Subtitle" Margin="8"/>
+
+                <Grid RowDefinitions="*,*,*,*,*,*,*,*" ColumnDefinitions="*,*" Margin="8">
+
+                    <Label Text="PERIODO:"  Grid.Row="0" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                    <CheckBox x:Name="chkPeriodo" Grid.Row="0" Grid.Column="1" ></CheckBox>
+
+                    <Label Text="CARRERA:"  Grid.Row="1" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                    <CheckBox x:Name="chkCarrera" Grid.Row="1" Grid.Column="1" ></CheckBox>
+
+                    <Label Text="NIVEL:"  Grid.Row="2" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                    <CheckBox x:Name="chkNivel" Grid.Row="2" Grid.Column="1" ></CheckBox>
+
+                    <Label Text="JORNADA:"  Grid.Row="3" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                    <CheckBox x:Name="chkJornada" Grid.Row="3" Grid.Column="1" ></CheckBox>
+
+                    <Label Text="INSCRIPCION:"  Grid.Row="4" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                    <CheckBox x:Name="chkInscripcion" Grid.Row="4" Grid.Column="1" ></CheckBox>
+
+                    <Label Text="PERFIL:"  Grid.Row="5" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                    <CheckBox x:Name="chkPerfil" Grid.Row="5" Grid.Column="1" ></CheckBox>
+
+                    <Label Text="USUARIO:"  Grid.Row="6" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                    <CheckBox x:Name="chkUsuario" Grid.Row="6" Grid.Column="1" ></CheckBox>
+
+                    <Label Text="PERMISO:"  Grid.Row="7" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                    <CheckBox x:Name="chkPermiso" Grid.Row="7" Grid.Column="1" ></CheckBox>
+
+                    <Button x:Name="btnGuardar" Text="GUARDAR" Clicked="btnGuardar_Clicked" BackgroundColor="DarkGreen" TextColor="LightGray" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

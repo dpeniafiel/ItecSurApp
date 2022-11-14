@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ItecSurApp.views.cambioClave.CambioClavePage" NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False"
+             Title="Cambio de clave">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*" Margin="8">
+                <Label Text="Nueva clave:" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtClave" IsPassword="True" IsEnabled="True" Placeholder="Clave" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+                <Label Text="confirmar nueva clave:" Grid.Row="1" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtClaveVerificacion" IsPassword="True" IsEnabled="True" Placeholder="Verificación clave" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Button x:Name="btnGuardar" Text="ACTUALIZAR CLAVE" Clicked="btnGuardar_Clicked" BackgroundColor="DarkGreen" TextColor="LightGray" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

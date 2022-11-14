@@ -6,15 +6,19 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
 
-            <Button Text="Periodo" x:Name="btnPeriodo" BackgroundColor="White" ImageSource="icono.png" Clicked="btnPeriodo_Clicked" />
-            <Button Text="Carrera" x:Name="btnCarrera" BackgroundColor="White" ImageSource="icono.png" Clicked="btnCarrera_Clicked"/>
-            <Button Text="Nivel" x:Name="btnNivel" BackgroundColor="White" ImageSource="icono.png" Clicked="btnNivel_Clicked" />
-            <Button Text="Jornada" x:Name="btnJornada" BackgroundColor="White" ImageSource="icono.png" Clicked="btnJornada_Clicked" />
-            <Button Text="Inscripcion" x:Name="btnInscripcion" BackgroundColor="White" ImageSource="icono.png" />
+            <Button  Text="Periodo" x:Name="btnPeriodo" BackgroundColor="White" ImageSource="icono.png" Clicked="btnPeriodo_Clicked" />
+            <Button  Text="Carrera" x:Name="btnCarrera" BackgroundColor="White" ImageSource="icono.png" Clicked="btnCarrera_Clicked"/>
+            <Button  Text="Nivel" x:Name="btnNivel" BackgroundColor="White" ImageSource="icono.png" Clicked="btnNivel_Clicked" />
+            <Button  Text="Jornada" x:Name="btnJornada" BackgroundColor="White" ImageSource="icono.png" Clicked="btnJornada_Clicked" />
+            <Button  Text="Inscripcion" x:Name="btnInscripcion" BackgroundColor="White" ImageSource="icono.png" />
 
-            <Button Text="Perfil usuario" x:Name="btnPerfil" BackgroundColor="White" ImageSource="iconoseg.png"/>
-            <Button Text="Usuario" x:Name="btnUsuario" BackgroundColor="White" ImageSource="iconoseg.png"  />
-            <Button Text="Administrar permisos" x:Name="btnPermisos" BackgroundColor="White" ImageSource="iconoseg.png" />
+            <Button  Text="Perfil usuario" x:Name="btnPerfil" BackgroundColor="White" ImageSource="iconoseg.png"/>
+            <Button  Text="Usuario" x:Name="btnUsuario" BackgroundColor="White" ImageSource="iconoseg.png" Clicked="btnUsuario_Clicked"  />
+            <Button  Text="Administrar permisos" x:Name="btnPermisos" BackgroundColor="White" ImageSource="iconoseg.png" Clicked="btnPermisos_Clicked" />
+            <Button  Text="Cambiar clave" x:Name="btnCambiarClave" BackgroundColor="White" ImageSource="iconoseg.png" Clicked="btnCambiarClave_Clicked" />
+            <Button  Text="Cerrar Sesión" x:Name="btnCerrarSesion" BackgroundColor="red" TextColor="white" Clicked="btnCerrarSesion_Clicked" />
+            <Label HorizontalOptions="Center" x:Name="lblPerfil" FontSize="Subtitle"/>
+            <Label HorizontalOptions="Center" x:Name="lblUsuario" FontSize="Subtitle"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

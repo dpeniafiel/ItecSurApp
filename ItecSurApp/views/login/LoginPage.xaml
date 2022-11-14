@@ -23,7 +23,16 @@
                     BackgroundColor="#00AE0C"
                     Text="Ingresar" 
                     Clicked="Button_Clicked">
+            </Button>
 
+            <Button x:Name="btnRegistrarse"
+                Grid.Row="6"
+                    Grid.ColumnSpan="3"
+                    CornerRadius="25" 
+                    TextColor="White"
+                    BackgroundColor="Gray"
+                    Text="Registrarse" 
+                    Clicked="btnRegistrarse_Clicked">
             </Button>
 
 

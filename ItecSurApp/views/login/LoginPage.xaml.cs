@@ -1,4 +1,6 @@
-﻿using ItecSurApp.views.inicio;
+﻿using ItecSurApp.services;
+using ItecSurApp.views.inicio;
+using ItecSurApp.views.registro;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,28 +15,48 @@ namespace ItecSurApp.views.login
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        private UsuarioService usuarioService;
+        private PerfilService perfilService;
+        private PermisoService permisoService;
         public LoginPage()
         {
             InitializeComponent();
+            usuarioService = new UsuarioService();
+            perfilService = new PerfilService();
+            permisoService = new PermisoService();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            string usuario = "a";
-            string clave = "1";
-
-            string tUsuario = txtUsuario.Text;
-            string tContrasenia = txtClave.Text;
-
-            if (usuario == tUsuario & clave == tContrasenia)
+            try
             {
-                Navigation.PushAsync(new InicioPage());
-            }
-            else
-            {
-                DisplayAlert("Ops", "Usuario  no contraseña incorrectos", "OK");
+                string tUsuario = txtUsuario.Text;
+                string tContrasenia = txtClave.Text;
 
+                var usuario = await usuarioService.GetUsuarioPor(tUsuario, tContrasenia);
+
+                if (usuario != null)
+                {
+                    App.Usuario = usuario;
+                    App.Perfil = await perfilService.GetPerfilPor(App.Usuario.perfil_codigo);
+                    App.Permisos = await permisoService.GetPermisosPorPerfil(App.Perfil.codigo);
+                    await Navigation.PushAsync(new InicioPage());
+                }
+                else
+                {
+                    await DisplayAlert("Error de acceso", "Usuario o contraseña incorrectos", "Aceptar");
+
+                }
             }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error de acceso", "Usuario o contraseña incorrectos", "Aceptar");
+            }
+        }
+
+        private void btnRegistrarse_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegistroPage());
         }
     }
 }
