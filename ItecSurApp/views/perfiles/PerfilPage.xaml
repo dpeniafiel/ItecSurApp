@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ItecSurApp.views.perfiles.PerfilPage"
+             NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False" 
+             Title="Perfiles Académicos"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+
+            <ListView x:Name="listRegistros" SeparatorColor="white" ItemSelected="listRegistros_ItemSelected">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowDefinitions="*"
+                                          ColumnDefinitions="*, *" >
+                                <Label Text="{Binding nombre}"  Grid.Row="0" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                                <Label Text="{Binding estado}"  Grid.Row="0" Grid.Column="1" FontSize="Body" TextColor="#212121" ></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnNuevo" Text="Nuevo Perfil" Clicked="btnNuevo_Clicked" BackgroundColor="#212121" TextColor="White"
+                CornerRadius="50" Margin="16"
+                ></Button>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

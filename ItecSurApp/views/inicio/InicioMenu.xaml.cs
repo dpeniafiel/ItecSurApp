@@ -4,7 +4,9 @@ using ItecSurApp.views.cambioClave;
 using ItecSurApp.views.carreras;
 using ItecSurApp.views.jornadas;
 using ItecSurApp.views.nivel;
+using ItecSurApp.views.perfiles;
 using ItecSurApp.views.permisos;
+using ItecSurApp.views.usuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -127,7 +129,9 @@ namespace ItecSurApp.views.inicio
 
         private async void btnUsuario_Clicked(object sender, EventArgs e)
         {
-            
+            App.MasterDet.IsPresented = false;
+
+            await App.MasterDet.Detail.Navigation.PushAsync(new UsuarioPage());
         }
 
         private async void btnPermisos_Clicked(object sender, EventArgs e)
@@ -142,6 +146,18 @@ namespace ItecSurApp.views.inicio
             App.MasterDet.IsPresented = false;
 
             await App.MasterDet.Detail.Navigation.PushAsync(new CambioClavePage());
+        }
+
+        private void btnPerfil_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnPerfiles_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+
+            await App.MasterDet.Detail.Navigation.PushAsync(new PerfilPage());
         }
     }
 }
