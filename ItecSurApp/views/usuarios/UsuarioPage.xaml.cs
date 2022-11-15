@@ -44,7 +44,7 @@ namespace ItecSurApp.views.usuarios
 
         private void btnNuevo_Clicked(object sender, EventArgs e)
         {
-          //  Navigation.PushAsync(new UsuarioAgregar());
+           Navigation.PushAsync(new UsuarioAgregar());
         }
     }
 }
