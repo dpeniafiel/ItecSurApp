@@ -56,7 +56,7 @@ namespace ItecSurApp.views.usuarios
                 txtSegundoApellido.Text = usuarioModel.segundo_apellido;
                 txtIdentificacion.Text = usuarioModel.identificacion;
                 txtUsuario.Text = usuarioModel.usuario;
-                txtClave.Text = usuarioModel.clave;
+              //  txtClave.Text = usuarioModel.clave;
                 txtCorreo.Text = usuarioModel.correo;
                 txtCelular.Text = usuarioModel.celular;
                 txtDireccion.Text = usuarioModel.direccion;
@@ -83,10 +83,10 @@ namespace ItecSurApp.views.usuarios
                 usuarioModel.identificacion = txtIdentificacion.Text;
                 usuarioModel.usuario = txtUsuario.Text;
                 usuarioModel.clave = txtClave.Text;
-                usuarioModel.correo = txtPrimerNombre.Text;
-                usuarioModel.celular = txtPrimerNombre.Text;
-                usuarioModel.direccion = txtPrimerNombre.Text;
-                usuarioModel.fotografia = txtPrimerNombre.Text;
+                usuarioModel.correo = txtCorreo.Text;
+                usuarioModel.celular = txtCelular.Text;
+                usuarioModel.direccion = txtDireccion.Text;
+                usuarioModel.fotografia = txtFotografia.Text;
 
                 usuarioModel.estado = cmbEstado.SelectedItem.ToString();
                 await usuarioService.PutUsuario(Int32.Parse(txtCodigo.Text), usuarioModel);
