@@ -65,7 +65,7 @@ namespace ItecSurApp.views.usuarios
 
         private async void btnCancelar_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new UsuarioPage());
         }
     }
 }
