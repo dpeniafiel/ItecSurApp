@@ -22,7 +22,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button x:Name="btnNuevo" Text="Nuevo periodo" Clicked="btnNuevo_Clicked" BackgroundColor="#212121" TextColor="White"
+            <Button x:Name="btnNuevo" Text="Nueva Carrera" Clicked="btnNuevo_Clicked" BackgroundColor="#212121" TextColor="White"
                 CornerRadius="50" Margin="16"
                 ></Button>
 

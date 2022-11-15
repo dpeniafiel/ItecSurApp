@@ -9,21 +9,21 @@ namespace ItecSurApp.services
 {
     public interface IJornadaService
     {
-        [Get("/periodos/")]
+        [Get("/jornadas/")]
         Task<AppResponseModel<List<JornadaModel>>> GetJornadas();
 
-        [Get("/periodos/{id}")]
+        [Get("/jornadas/{id}")]
         Task<AppResponseModel<JornadaModel>> GetJornada(int id);
 
-        [Post("/periodos/")]
+        [Post("/jornadas/")]
         [Headers("Content-Type: application/json")]
         Task<AppResponseModel<JornadaModel>> PostJornada([Body] JornadaModel periodo);
 
-        [Put("/periodos/{id}")]
+        [Put("/jornadas/{id}")]
         [Headers("Content-Type: application/json")]
         Task<AppResponseModel<JornadaModel>> PutJornada(int id, [Body] JornadaModel periodo);
 
-        [Delete("/periodos/{id}")]
+        [Delete("/jornadas/{id}")]
         [Headers("Content-Type: application/json")]
         Task<AppResponseModel<JornadaModel>> DeleteJornada(int id);
     }
