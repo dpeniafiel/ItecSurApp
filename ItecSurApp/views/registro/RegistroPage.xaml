@@ -44,7 +44,7 @@
                     <Label Text="Fotografía:" Grid.Row="11" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
                     <Entry x:Name="txtFotografia" IsEnabled="True" Placeholder="Fotografía" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                    <Button x:Name="btnRegistrar" Text="REGISTRAR" Clicked="btnRegistrar_Clicked" BackgroundColor="DarkGreen" TextColor="LightGray" Grid.Row="1" Grid.Column="1"/>
+                    <Button x:Name="btnRegistrar" Text="REGISTRAR" Clicked="btnRegistrar_Clicked" BackgroundColor="DarkGreen" TextColor="LightGray" Grid.Row="12" Grid.Column="0"/>
                     <Button x:Name="btnCancelar" Text="CANCELAR" Clicked="btnCancelar_Clicked" BackgroundColor="Gray" TextColor="white" Grid.Row="12" Grid.Column="1"/>
                 </Grid>
             </StackLayout>
