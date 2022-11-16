@@ -6,6 +6,9 @@
     <ContentPage.Content>
         <StackLayout Padding="40" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
+            <Button x:Name="btnTomarFoto" Text="Tomar Foto" Clicked="btnTomarFoto_Clicked"></Button>
+            <Button x:Name="btnSeleccionarFoto" Text="Seleccionar Foto" Clicked="btnSeleccionarFoto_Clicked"></Button>
+            <Image x:Name="imagen"></Image>
 
 
             <Image Source="itecsur.png" WidthRequest="180" HeightRequest="180"></Image>
