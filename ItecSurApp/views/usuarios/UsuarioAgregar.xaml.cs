@@ -1,9 +1,11 @@
 ﻿using ItecSurApp.models;
 using ItecSurApp.services;
 using ItecSurApp.views.login;
+using Plugin.Media;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,6 +81,80 @@ namespace ItecSurApp.views.usuarios
         private async void btnCancelar_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new UsuarioPage());
+        }
+
+        private async void btnTomarFoto_Clicked(object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await DisplayAlert("EROR", "cámara no disponible", "Aceptar");
+                return;
+            }
+
+            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            {
+                Directory = "itecsur",
+                Name = "foto.jpg",
+                SaveToAlbum = true,
+                CompressionQuality = 75,
+                CustomPhotoSize = 50,
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.MaxWidthHeight,
+                MaxWidthHeight = 2000,
+                DefaultCamera = Plugin.Media.Abstractions.CameraDevice.Front
+            });
+
+            if (file == null)
+            {
+                return;
+            }
+
+            //await DisplayAlert("Dirección de imagen", file.Path, "Aceptar");
+
+
+
+            Byte[] bytes = File.ReadAllBytes(file.Path);
+            String encodedFile = Convert.ToBase64String(bytes);
+            txtFotografia.Text = encodedFile;
+
+            imgFoto.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                file.Dispose();
+                return stream;
+            });
+
+
+        }
+
+        private async void btnSeleccionarFoto_Clicked(object sender, EventArgs e)
+        {
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("EROR", "permiso no asignado a fotos", "Aceptar");
+                return;
+            }
+            var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            {
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+            });
+
+            if (file == null)
+            {
+                return;
+            }
+
+            Byte[] bytes = File.ReadAllBytes(file.Path);
+            String encodedFile = Convert.ToBase64String(bytes);
+            txtFotografia.Text = encodedFile;
+
+            imgFoto.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                file.Dispose();
+                return stream;
+            });
         }
     }
 }

@@ -1,9 +1,12 @@
 ﻿using ItecSurApp.models;
 using ItecSurApp.services;
 using ItecSurApp.views.usuarios;
+using Plugin.Media;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,16 +59,20 @@ namespace ItecSurApp.views.usuarios
                 txtSegundoApellido.Text = usuarioModel.segundo_apellido;
                 txtIdentificacion.Text = usuarioModel.identificacion;
                 txtUsuario.Text = usuarioModel.usuario;
-              //  txtClave.Text = usuarioModel.clave;
+                //  txtClave.Text = usuarioModel.clave;
                 txtCorreo.Text = usuarioModel.correo;
                 txtCelular.Text = usuarioModel.celular;
                 txtDireccion.Text = usuarioModel.direccion;
                 txtFotografia.Text = usuarioModel.fotografia;
+                var decodedBase64Image = Convert.FromBase64String(usuarioModel.fotografia);
+                Stream stream = new MemoryStream(decodedBase64Image);
+                var imageSource = ImageSource.FromStream(() => stream);
+                imgFoto.Source = imageSource;
                 cmbEstado.SelectedItem = usuarioModel.estado;
             }
             catch (Exception)
             {
-                DisplayAlert("ADVERTENCIA", "Problema cargando información del registro seleccionado", "Aceptar");
+                await DisplayAlert("ADVERTENCIA", "Problema cargando información del registro seleccionado", "Aceptar");
             }
         }
 
@@ -120,6 +127,80 @@ namespace ItecSurApp.views.usuarios
         private async void btnCancelar_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new UsuarioPage());
+        }
+
+        private async void btnTomarFoto_Clicked(object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await DisplayAlert("EROR", "cámara no disponible", "Aceptar");
+                return;
+            }
+
+            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            {
+                Directory = "itecsur",
+                Name = "foto.jpg",
+                SaveToAlbum = true,
+                CompressionQuality = 75,
+                CustomPhotoSize = 50,
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.MaxWidthHeight,
+                MaxWidthHeight = 2000,
+                DefaultCamera = Plugin.Media.Abstractions.CameraDevice.Front
+            });
+
+            if (file == null)
+            {
+                return;
+            }
+
+            //await DisplayAlert("Dirección de imagen", file.Path, "Aceptar");
+
+
+
+            Byte[] bytes = File.ReadAllBytes(file.Path);
+            String encodedFile = Convert.ToBase64String(bytes);
+            txtFotografia.Text = encodedFile;
+
+            imgFoto.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                file.Dispose();
+                return stream;
+            });
+
+
+        }
+
+        private async void btnSeleccionarFoto_Clicked(object sender, EventArgs e)
+        {
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("EROR", "permiso no asignado a fotos", "Aceptar");
+                return;
+            }
+            var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            {
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+            });
+
+            if (file == null)
+            {
+                return;
+            }
+
+            Byte[] bytes = File.ReadAllBytes(file.Path);
+            String encodedFile = Convert.ToBase64String(bytes);
+            txtFotografia.Text = encodedFile;
+
+            imgFoto.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                file.Dispose();
+                return stream;
+            });
         }
     }
 }
