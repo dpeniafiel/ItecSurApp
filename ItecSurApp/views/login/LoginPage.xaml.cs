@@ -4,6 +4,7 @@ using ItecSurApp.views.registro;
 using Plugin.Media;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,6 +95,10 @@ namespace ItecSurApp.views.login
                 file.Dispose();
                 return stream;
             });
+
+            Byte[] bytes = File.ReadAllBytes(file.Path);
+            String encodedFile = Convert.ToBase64String(bytes);
+            Console.WriteLine(encodedFile);
 
         }
 
