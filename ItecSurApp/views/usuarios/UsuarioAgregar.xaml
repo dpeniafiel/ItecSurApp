@@ -9,45 +9,49 @@
         <StackLayout>
 
             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*">
+                <Label Text="Perfil:" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Picker x:Name="cmbPerfil" Title="Seleccione uno" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"
+                         ItemDisplayBinding="{Binding nombre}" >
+                </Picker>
 
-                <Label Text="Primer Nombre:" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtPrimerNombre" IsEnabled="True" Placeholder="Primer nombre" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Primer Nombre:" Grid.Row="1" Grid.Column="0"   FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtPrimerNombre" IsEnabled="True" Placeholder="Primer nombre" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Segundo Nombre:" Grid.Row="1" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtSegundoNombre" IsEnabled="True" Placeholder="Segundo Nombre" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Segundo Nombre:" Grid.Row="2" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtSegundoNombre" IsEnabled="True" Placeholder="Segundo Nombre" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Primer Apellido:" Grid.Row="2" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtPrimerApellido" IsEnabled="True" Placeholder="Primer Apellido" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Primer Apellido:" Grid.Row="3" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtPrimerApellido" IsEnabled="True" Placeholder="Primer Apellido" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Segundo Apellido:" Grid.Row="3" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtSegundoApellido" IsEnabled="True" Placeholder="Segundo Apellido" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Segundo Apellido:" Grid.Row="4" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtSegundoApellido" IsEnabled="True" Placeholder="Segundo Apellido" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Identificación:" Grid.Row="4" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtIdentificacion" IsEnabled="True" Placeholder="Identificación" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Identificación:" Grid.Row="5" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtIdentificacion" IsEnabled="True" Placeholder="Identificación" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Nombre usuario:" Grid.Row="5" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtUsuario" IsEnabled="True" Placeholder="Nombre usuario" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Nombre usuario:" Grid.Row="6" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtUsuario" IsEnabled="True" Placeholder="Nombre usuario" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Clave:" Grid.Row="6" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtClave" IsPassword="True" IsEnabled="True" Placeholder="Clave" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Clave:" Grid.Row="7" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtClave" IsPassword="True" IsEnabled="True" Placeholder="Clave" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Verificar clave:" Grid.Row="7" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtClaveVerificacion" IsPassword="True" IsEnabled="True" Placeholder="Verificación clave" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Verificar clave:" Grid.Row="8" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtClaveVerificacion" IsPassword="True" IsEnabled="True" Placeholder="Verificación clave" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Correo:" Grid.Row="8" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtCorreo" Keyboard="Email" IsEnabled="True" Placeholder="Correo" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Correo:" Grid.Row="9" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtCorreo" Keyboard="Email" IsEnabled="True" Placeholder="Correo" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Número contacto:" Grid.Row="9" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtCelular" Keyboard="Telephone" IsEnabled="True" Placeholder="Celular" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Número contacto:" Grid.Row="10" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtCelular" Keyboard="Telephone" IsEnabled="True" Placeholder="Celular" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Dirección:" Grid.Row="10" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtDireccion" IsEnabled="True" Placeholder="Dirección" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Dirección:" Grid.Row="11" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtDireccion" IsEnabled="True" Placeholder="Dirección" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Label Text="Fotografía:" Grid.Row="11" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
-                <Entry x:Name="txtFotografia" IsEnabled="True" Placeholder="Fotografía" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Text="Fotografía:" Grid.Row="12" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                <Entry x:Name="txtFotografia" IsEnabled="True" Placeholder="Fotografía" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <Button x:Name="btnRegistrar" Text="REGISTRAR" Clicked="btnRegistrar_Clicked" BackgroundColor="DarkGreen" TextColor="LightGray" Grid.Row="12" Grid.Column="0"/>
-                <Button x:Name="btnCancelar" Text="CANCELAR" Clicked="btnCancelar_Clicked" BackgroundColor="Gray" TextColor="white" Grid.Row="12" Grid.Column="1"/>
+                <Button x:Name="btnRegistrar" Text="REGISTRAR" Clicked="btnRegistrar_Clicked" BackgroundColor="DarkGreen" TextColor="LightGray" Grid.Row="13" Grid.Column="0"/>
+                <Button x:Name="btnCancelar" Text="CANCELAR" Clicked="btnCancelar_Clicked" BackgroundColor="Gray" TextColor="white" Grid.Row="13" Grid.Column="1"/>
             </Grid>
 
 

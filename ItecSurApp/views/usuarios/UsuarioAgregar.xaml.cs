@@ -3,6 +3,7 @@ using ItecSurApp.services;
 using ItecSurApp.views.login;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,18 +17,30 @@ namespace ItecSurApp.views.usuarios
     public partial class UsuarioAgregar : ContentPage
     {
         private UsuarioService usuarioService;
+        PerfilService perfilService;  //propiedad
+        private List<PerfilModel> perfils;
         public UsuarioAgregar()
         {
             InitializeComponent();
             usuarioService = new UsuarioService();
+            this.perfilService = new PerfilService();
+            CargarPerfils();
         }
 
+        private async Task CargarPerfils()
+        {
+            perfils = await perfilService.GetPerfiles();
+            cmbPerfil.ItemsSource = new ObservableCollection<PerfilModel>(perfils);
+
+        }
         private async void btnRegistrar_Clicked(object sender, EventArgs e)
         {
             try
             {
                 UsuarioModel usuario = new UsuarioModel();
-                usuario.perfil_codigo = 2;
+
+                PerfilModel perfilModel = (PerfilModel)cmbPerfil.SelectedItem;
+                usuario.perfil_codigo = perfilModel.codigo;            
                 usuario.primer_nombre = txtPrimerNombre.Text;
                 usuario.segundo_nombre = txtSegundoNombre.Text;
                 usuario.primer_apellido = txtPrimerApellido.Text;
