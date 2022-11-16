@@ -39,12 +39,12 @@ namespace ItecSurApp.views.usuarios
 
         private void listRegistros_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-           // Navigation.PushAsync(new UsuarioActualizarEliminar((UsuarioModel)e.SelectedItem));
+           Navigation.PushAsync(new UsuarioActualizarEliminar((UsuarioModel)e.SelectedItem));
         }
 
         private void btnNuevo_Clicked(object sender, EventArgs e)
         {
-          //  Navigation.PushAsync(new UsuarioAgregar());
+           Navigation.PushAsync(new UsuarioAgregar());
         }
     }
 }

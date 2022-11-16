@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ItecSurApp.views.usuarios.UsuarioPage">
+             x:Class="ItecSurApp.views.usuarios.UsuarioPage"
+              NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False" 
+             Title="Usuarios"
+             >
     <ContentPage.Content>
         <StackLayout>
 
@@ -12,13 +15,11 @@
                         <ViewCell>
                             <Grid RowDefinitions="*"
                                           ColumnDefinitions="*, *" >
-                                <Label Text="{Binding codigo  }"  Grid.Row="0" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                                <Label Text="{Binding perfil_codigo   }"  Grid.Row="0" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
                                 <Label Text="{Binding primer_nombre }"  Grid.Row="0" Grid.Column="1" FontSize="Body" TextColor="#212121" ></Label>
-                                <Label Text="{Binding primer_apellido  }"  Grid.Row="0" Grid.Column="2" FontSize="Body" TextColor="#212121" ></Label>
+                                <Label Text="{Binding primer_apellido   }"  Grid.Row="0" Grid.Column="2" FontSize="Body" TextColor="#212121" ></Label>
                                 <Label Text="{Binding identificacion  }"  Grid.Row="0" Grid.Column="3" FontSize="Body" TextColor="#212121" ></Label>
-
-
-                            </Grid>
+                          </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
