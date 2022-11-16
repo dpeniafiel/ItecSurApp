@@ -26,6 +26,26 @@ namespace ItecSurApp.services
             return appResponseModel.data;
         }
 
+        public async Task<List<CarreraModel>> GetCarrerasActivas()
+        {
+            var appResponseModel = await carreraService.GetCarrerasActivas();
+            if (appResponseModel.error != null)
+            {
+                throw new Exception(appResponseModel.error);
+            }
+            return appResponseModel.data;
+        }
+
+        public async Task<List<CarreraModel>> GetCarrerasActivasPorPeriodo(int periodo)
+        {
+            var appResponseModel = await carreraService.GetCarrerasActivasPorPeriodo(periodo);
+            if (appResponseModel.error != null)
+            {
+                throw new Exception(appResponseModel.error);
+            }
+            return appResponseModel.data;
+        }
+
         public async Task PostCarrera(CarreraModel carreraModel)
         {
             var appResponseModel = await carreraService.PostCarrera(carreraModel);

@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace ItecSurApp.services
 {
-    public class PeriodoService
+    public class InscripcionService
     {
-        IPeriodoService periodoService;
-        public PeriodoService()
+        IInscripcionService inscripcionService;
+        public InscripcionService()
         {
-            periodoService = RestService.For<IPeriodoService>(AppConf.BACKEND_URL);
+            inscripcionService = RestService.For<IInscripcionService>(AppConf.BACKEND_URL);
         }
 
-        public async Task<List<PeriodoModel>> GetPeriodos()
+        public async Task<List<InscripcionModel>> GetInscripciones()
         {
-            var appResponseModel = await periodoService.GetPeriodos();
+            var appResponseModel = await inscripcionService.GetInscripciones();
             if (appResponseModel.error !=null)
             {
                 throw new Exception(appResponseModel.error);
@@ -26,9 +26,9 @@ namespace ItecSurApp.services
             return appResponseModel.data;
         }
 
-        public async Task<List<PeriodoModel>> GetPeriodosActivos()
+        public async Task<List<InscripcionModel>> GetInscripcionesActivos()
         {
-            var appResponseModel = await periodoService.GetPeriodosActivos();
+            var appResponseModel = await inscripcionService.GetInscripcionesActivas();
             if (appResponseModel.error != null)
             {
                 throw new Exception(appResponseModel.error);
@@ -36,27 +36,27 @@ namespace ItecSurApp.services
             return appResponseModel.data;
         }
 
-        public async Task PostPeriodo(PeriodoModel periodoModel)
+        public async Task PostInscripcion(InscripcionModel inscripcionModel)
         {
-            var appResponseModel = await periodoService.PostPeriodo(periodoModel);
+            var appResponseModel = await inscripcionService.PostInscripcion(inscripcionModel);
             if (appResponseModel.error != null)
             {
                 throw new Exception(appResponseModel.error);
             }
         }
 
-        public async Task PutPeriodo(int id, PeriodoModel periodoModel)
+        public async Task PutInscripcion(int id, InscripcionModel inscripcionModel)
         {
-            var appResponseModel = await periodoService.PutPeriodo(id, periodoModel);
+            var appResponseModel = await inscripcionService.PutInscripcion(id, inscripcionModel);
             if (appResponseModel.error != null)
             {
                 throw new Exception(appResponseModel.error);
             }
         }
 
-        public async Task DeletePeriodo(int id)
+        public async Task DeleteInscripcion(int id)
         {
-            var appResponseModel = await periodoService.DeletePeriodo(id);
+            var appResponseModel = await inscripcionService.DeleteInscripcion(id);
             if (appResponseModel.error != null)
             {
                 throw new Exception(appResponseModel.error);

@@ -12,6 +12,12 @@ namespace ItecSurApp.services
         [Get("/jornadas/")]
         Task<AppResponseModel<List<JornadaModel>>> GetJornadas();
 
+        [Get("/jornadas/active")]
+        Task<AppResponseModel<List<JornadaModel>>> GetJornadasActivas();
+
+        [Get("/jornadas/active/nivel/{nivelId}")]
+        Task<AppResponseModel<List<JornadaModel>>> GetJornadasActivasPorNivel(int nivelId);
+
         [Get("/jornadas/{id}")]
         Task<AppResponseModel<JornadaModel>> GetJornada(int id);
 

@@ -26,6 +26,26 @@ namespace ItecSurApp.services
             return appResponseModel.data;
         }
 
+        public async Task<List<NivelModel>> GetNivelesActivos()
+        {
+            var appResponseModel = await nivelService.GetNivelesActivos();
+            if (appResponseModel.error != null)
+            {
+                throw new Exception(appResponseModel.error);
+            }
+            return appResponseModel.data;
+        }
+
+        public async Task<List<NivelModel>> GetNivelesActivosPorCarrera(int carreraId)
+        {
+            var appResponseModel = await nivelService.GetNivelesActivosPorCarrera(carreraId);
+            if (appResponseModel.error != null)
+            {
+                throw new Exception(appResponseModel.error);
+            }
+            return appResponseModel.data;
+        }
+
         public async Task PostNivel(NivelModel nivelModel)
         {
             var appResponseModel = await nivelService.PostNivel(nivelModel);

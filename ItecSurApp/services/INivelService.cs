@@ -12,6 +12,12 @@ namespace ItecSurApp.services
         [Get("/niveles/")]
         Task<AppResponseModel<List<NivelModel>>> GetNiveles();
 
+        [Get("/niveles/active")]
+        Task<AppResponseModel<List<NivelModel>>> GetNivelesActivos();
+
+        [Get("/niveles/active/carrera/{carreraId}")]
+        Task<AppResponseModel<List<NivelModel>>> GetNivelesActivosPorCarrera(int carreraId);
+
         [Get("/niveles/{id}")]
         Task<AppResponseModel<NivelModel>> GetNivel(int id);
 

@@ -12,6 +12,12 @@ namespace ItecSurApp.services
         [Get("/carreras/")]
         Task<AppResponseModel<List<CarreraModel>>> GetCarreras();
 
+        [Get("/carreras/active")]
+        Task<AppResponseModel<List<CarreraModel>>> GetCarrerasActivas();
+
+        [Get("/carreras/active/periodo/{periodoId}")]
+        Task<AppResponseModel<List<CarreraModel>>> GetCarrerasActivasPorPeriodo(int periodoId);
+
         [Get("/carreras/{id}")]
         Task<AppResponseModel<CarreraModel>> GetCarrera(int id);
 

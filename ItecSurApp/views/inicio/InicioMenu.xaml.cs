@@ -2,6 +2,7 @@
 using ItecSurApp.services;
 using ItecSurApp.views.cambioClave;
 using ItecSurApp.views.carreras;
+using ItecSurApp.views.inscripcion;
 using ItecSurApp.views.jornadas;
 using ItecSurApp.views.nivel;
 using ItecSurApp.views.perfiles;
@@ -148,16 +149,19 @@ namespace ItecSurApp.views.inicio
             await App.MasterDet.Detail.Navigation.PushAsync(new CambioClavePage());
         }
 
-        private void btnPerfil_Clicked(object sender, EventArgs e)
-        {
-
-        }
 
         private async void btnPerfiles_Clicked(object sender, EventArgs e)
         {
             App.MasterDet.IsPresented = false;
 
             await App.MasterDet.Detail.Navigation.PushAsync(new PerfilPage());
+        }
+
+        private async void btnInscripcion_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+
+            await App.MasterDet.Detail.Navigation.PushAsync(new InscripcionPage());
         }
     }
 }

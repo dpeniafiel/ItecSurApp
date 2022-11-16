@@ -26,6 +26,26 @@ namespace ItecSurApp.services
             return appResponseModel.data;
         }
 
+        public async Task<List<JornadaModel>> GetJornadasActivas()
+        {
+            var appResponseModel = await jornadaService.GetJornadasActivas();
+            if (appResponseModel.error != null)
+            {
+                throw new Exception(appResponseModel.error);
+            }
+            return appResponseModel.data;
+        }
+
+        public async Task<List<JornadaModel>> GetJornadasActivasPorNivel(int nivelId)
+        {
+            var appResponseModel = await jornadaService.GetJornadasActivasPorNivel(nivelId);
+            if (appResponseModel.error != null)
+            {
+                throw new Exception(appResponseModel.error);
+            }
+            return appResponseModel.data;
+        }
+
         public async Task PostJornada(JornadaModel jornadaModel)
         {
             var appResponseModel = await jornadaService.PostJornada(jornadaModel);

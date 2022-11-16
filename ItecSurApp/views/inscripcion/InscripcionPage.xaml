@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ItecSurApp.views.inscripcion.InscripcionPage" NavigationPage.HasNavigationBar="True" NavigationPage.HasBackButton="False" 
+             Title="Inscripción">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*,*" Margin="8">
+                    
+                    <Label Text="Periodo:" Grid.Row="0" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                    <Picker x:Name="cmbPeriodo" Title="Seleccione uno" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                        ItemDisplayBinding="{Binding nombre}" SelectedIndexChanged="cmbPeriodo_SelectedIndexChanged" >
+                    </Picker>
+                    
+                    <Label Text="Carrera:" Grid.Row="1" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                    <Picker x:Name="cmbCarrera" Title="Seleccione uno" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                        ItemDisplayBinding="{Binding nombre}" SelectedIndexChanged="cmbCarrera_SelectedIndexChanged" >
+                    </Picker>
+                    
+                    <Label Text="Nivel:" Grid.Row="2" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                    <Picker x:Name="cmbNivel" Title="Seleccione uno" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                        ItemDisplayBinding="{Binding nombre}" SelectedIndexChanged="cmbNivel_SelectedIndexChanged" >
+                    </Picker>
+                    <Label Text="Jornada:" Grid.Row="3" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
+                    <Picker x:Name="cmbJornada" Title="Seleccione uno" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
+                        ItemDisplayBinding="{Binding nombre}" >
+                    </Picker>
+                    
+                    <Button x:Name="btnInscribir" Text="INSCRIBIRME" Clicked="btnInscribir_Clicked" BackgroundColor="DarkGreen" TextColor="LightGray" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"/>
+                    
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
