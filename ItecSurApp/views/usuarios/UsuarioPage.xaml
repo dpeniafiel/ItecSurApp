@@ -28,6 +28,14 @@
                 CornerRadius="50" Margin="16"
                 ></Button>
 
+
+            <Button BackgroundColor="Red" 
+                     Command="{Binding ExportToExcelCommand}"
+                     Text="Exportar Información "
+                     TextColor="White"
+                     CornerRadius="50" Margin="16"
+                     VerticalOptions="CenterAndExpand" />           
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

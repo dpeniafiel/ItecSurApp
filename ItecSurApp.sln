@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItecSurApp.Android", "ItecS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItecSurApp.iOS", "ItecSurApp.iOS\ItecSurApp.iOS.csproj", "{FDA84CCB-48E5-4CF8-9658-8A14478D23B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItecSurApp", "ItecSurApp\ItecSurApp.csproj", "{847872B7-F9E2-447D-811B-7A4BE982E943}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItecSurApp", "ItecSurApp\ItecSurApp.csproj", "{847872B7-F9E2-447D-811B-7A4BE982E943}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

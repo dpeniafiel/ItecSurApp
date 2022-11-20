@@ -22,6 +22,9 @@ namespace ItecSurApp.views.usuarios
             InitializeComponent();
             UsuarioService = new UsuarioService();
             CargarDatos();
+          
+            BindingContext = new ExportingExcelViewModel();
+
         }
 
         private async void CargarDatos()
