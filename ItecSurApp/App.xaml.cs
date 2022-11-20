@@ -1,8 +1,11 @@
-﻿using ItecSurApp.models;
+﻿
+using ItecSurApp.GenerateExcel;
+using ItecSurApp.models;
 using ItecSurApp.views.inicio;
 using ItecSurApp.views.jornadas;
 using ItecSurApp.views.login;
 using ItecSurApp.views.nivel;
+using ItecSurApp.views.usuarios;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;

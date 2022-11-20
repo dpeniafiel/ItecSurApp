@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.18.0" />
     <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
     <PackageReference Include="Refit" Version="6.3.2" />
     <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
@@ -31,6 +32,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="GenerateExcel\ExcelExport.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="GenerateExcel\ExportingEPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="views\cambioClave\CambioClavePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
