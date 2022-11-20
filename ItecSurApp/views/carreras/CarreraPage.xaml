@@ -15,8 +15,9 @@
                         <ViewCell>
                             <Grid RowDefinitions="*"
                                           ColumnDefinitions="*, *" >
-                                <Label Text="{Binding nombre}"  Grid.Row="0" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
-                                <Label Text="{Binding estado}"  Grid.Row="0" Grid.Column="1" FontSize="Body" TextColor="#212121" ></Label>
+                                <Label Text="{Binding periodo_nombre}"  Grid.Row="0" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                                <Label Text="{Binding nombre}"  Grid.Row="0" Grid.Column="1" FontSize="Body" TextColor="#212121" ></Label>
+                                <Label Text="{Binding estado}"  Grid.Row="0" Grid.Column="2" FontSize="Body" TextColor="#212121" ></Label>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

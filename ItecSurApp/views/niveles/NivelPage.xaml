@@ -8,15 +8,17 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <ListView x:Name="listRegistros" SeparatorColor="white" ItemSelected="listRegistros_ItemSelected">
+            <ListView x:Name="listRegistros" SeparatorColor="white" ItemSelected="listRegistros_ItemSelected" >
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid RowDefinitions="*"
                                           ColumnDefinitions="*, *" >
-                                <Label Text="{Binding nombre}"  Grid.Row="0" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
-                                <Label Text="{Binding estado}"  Grid.Row="0" Grid.Column="1" FontSize="Body" TextColor="#212121" ></Label>
+                                <Label Text="{Binding periodo_nombre}"  Grid.Row="0" Grid.Column="0" FontSize="Body" TextColor="#212121" TextDecorations="Underline" FontAttributes="Bold" ></Label>
+                                <Label Text="{Binding carrera_nombre}"  Grid.Row="1" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                                <Label Text="{Binding nombre}"  Grid.Row="1" Grid.Column="1" FontSize="Body" TextColor="#212121" ></Label>
+                                <Label Text="{Binding estado}"  Grid.Row="1" Grid.Column="2" FontSize="Body" TextColor="#212121" ></Label>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

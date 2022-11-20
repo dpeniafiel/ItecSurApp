@@ -37,7 +37,10 @@
                     <Label Text="PERMISO:"  Grid.Row="7" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
                     <CheckBox x:Name="chkPermiso" Grid.Row="7" Grid.Column="1" ></CheckBox>
 
-                    <Button x:Name="btnGuardar" Text="GUARDAR" Clicked="btnGuardar_Clicked" BackgroundColor="DarkGreen" TextColor="LightGray" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <Label Text="INFORME INSCRIPCIONES:"  Grid.Row="8" Grid.Column="0" FontSize="Body" TextColor="#212121" ></Label>
+                    <CheckBox x:Name="chkInforme1" Grid.Row="8" Grid.Column="1" ></CheckBox>
+
+                    <Button x:Name="btnGuardar" Text="GUARDAR" Clicked="btnGuardar_Clicked" BackgroundColor="DarkGreen" TextColor="LightGray" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"/>
 
                 </Grid>
 

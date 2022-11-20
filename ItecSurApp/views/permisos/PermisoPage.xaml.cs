@@ -46,6 +46,7 @@ namespace ItecSurApp.views.permisos
             chkPerfil.IsChecked = false;
             chkUsuario.IsChecked = false;
             chkPermiso.IsChecked = false;
+            chkInforme1.IsChecked = false;
             ActivarCheck(chkPeriodo, "PERIODO", permisosDePerfil);
             ActivarCheck(chkCarrera, "CARRERA", permisosDePerfil);
             ActivarCheck(chkNivel, "NIVEL", permisosDePerfil);
@@ -54,6 +55,7 @@ namespace ItecSurApp.views.permisos
             ActivarCheck(chkPerfil, "PERFIL", permisosDePerfil);
             ActivarCheck(chkUsuario, "USUARIO", permisosDePerfil);
             ActivarCheck(chkPermiso, "PERMISO", permisosDePerfil);
+            ActivarCheck(chkInforme1, "INFORME1", permisosDePerfil);
 
 
         }
@@ -86,6 +88,7 @@ namespace ItecSurApp.views.permisos
                 await GuardarPermiso("PERFIL", chkPerfil.IsChecked, perfilSeleccionado);
                 await GuardarPermiso("USUARIO", chkUsuario.IsChecked, perfilSeleccionado);
                 await GuardarPermiso("PERMISO", chkPermiso.IsChecked, perfilSeleccionado);
+                await GuardarPermiso("INFORME1", chkInforme1.IsChecked, perfilSeleccionado);
                 await DisplayAlert("CORRECTO", "Cambios aplicados con éxito", "Aceptar");
             }
             catch (Exception ex)

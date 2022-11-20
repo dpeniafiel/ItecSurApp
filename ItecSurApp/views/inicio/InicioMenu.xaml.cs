@@ -2,6 +2,7 @@
 using ItecSurApp.services;
 using ItecSurApp.views.cambioClave;
 using ItecSurApp.views.carreras;
+using ItecSurApp.views.informes;
 using ItecSurApp.views.inscripcion;
 using ItecSurApp.views.jornadas;
 using ItecSurApp.views.nivel;
@@ -43,6 +44,7 @@ namespace ItecSurApp.views.inicio
             btnNivel.IsVisible = false;
             btnJornada.IsVisible = false;
             btnInscripcion.IsVisible = false;
+            btnInforme1.IsVisible = false;
             btnPerfil.IsVisible = false;
             btnUsuario.IsVisible = false;
             btnPermisos.IsVisible = false;
@@ -90,6 +92,11 @@ namespace ItecSurApp.views.inicio
                 if (permiso.opcion_codigo.Equals("PERMISO"))
                 {
                     btnPermisos.IsVisible = true;
+                }
+
+                if (permiso.opcion_codigo.Equals("INFORME1"))
+                {
+                    btnInforme1.IsVisible = true;
                 }
             }
         }
@@ -162,6 +169,13 @@ namespace ItecSurApp.views.inicio
             App.MasterDet.IsPresented = false;
 
             await App.MasterDet.Detail.Navigation.PushAsync(new InscripcionPage());
+        }
+
+        private async void btnInforme1_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+
+            await App.MasterDet.Detail.Navigation.PushAsync(new Informe1());
         }
     }
 }

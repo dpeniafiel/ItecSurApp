@@ -11,7 +11,14 @@ namespace ItecSurApp.models
             public string nombre { get; set; }
             public string descripcion { get; set; }
             public string estado { get; set; }
-        
+
+        public string periodo_nombre { get; set; }
+
+        public string carrera_nombre { get; set; }
+
+        public string nivel_nombre { get; set; }
+
+
 
 
     }

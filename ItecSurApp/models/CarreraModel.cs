@@ -10,7 +10,11 @@ namespace ItecSurApp.models
             public int periodo_codigo { get; set; }
             public string nombre { get; set; }
             public string estado { get; set; }
-        
+
+            public string periodo_nombre { get; set; }
+
+            public string nombre_completo { get; set; }
+
 
     }
 }

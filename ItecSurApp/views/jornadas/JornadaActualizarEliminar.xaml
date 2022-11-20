@@ -14,7 +14,7 @@
 
                 <Label Text="Nivel:" Grid.Row="1" Grid.Column="0"  FontAttributes="Bold" FontSize="18"/>
                 <Picker x:Name="cmbNivel" Title="Seleccione uno" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
-                         ItemDisplayBinding="{Binding nombre}" >
+                         ItemDisplayBinding="{Binding nombre_completo}" >
 
                 </Picker>
 
