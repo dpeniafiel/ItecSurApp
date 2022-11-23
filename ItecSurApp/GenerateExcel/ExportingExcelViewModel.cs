@@ -32,8 +32,8 @@ namespace ItecSurApp.models
 
         async Task ExportToExcel()
         { 
-            var fileprimer_nombre = $"Usuario-{Guid.NewGuid()}.xlsx";
-            string filepath = excelService.GenerateExcel(fileprimer_nombre);
+            var archivo = $"Usuario-{Guid.NewGuid()}.xlsx";
+            string filepath = excelService.GenerateExcel(archivo);
 
             var data = new ExcelStructure
             {
