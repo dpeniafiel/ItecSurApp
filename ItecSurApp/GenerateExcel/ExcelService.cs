@@ -39,7 +39,7 @@ namespace ItecSurApp.models
                             {
                                 Id = wbPart.GetIdOfPart(part),
                                 SheetId = 1,
-                                Name = "Contacts"
+                                Name = "Usuario"
                             }
                         )
                 );
