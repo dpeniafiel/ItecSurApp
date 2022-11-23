@@ -14,12 +14,12 @@ namespace ItecSurApp.models
     {
         public  ICommand ExportToExcelCommand { private set; get; }
         private ExcelService excelService;
-        public  ObservableCollection<Usuario> contacts;
+        public  ObservableCollection<Usuario> usuario;
         
 
         public ExportingExcelViewModel()
         {
-            contacts = new ObservableCollection<Usuario>
+            usuario = new ObservableCollection<Usuario>
             {
                 new Usuario{  primer_nombre="Diego",       segundo_nombre="Armando",   primer_apellido="Penafiel" },
                 new Usuario{  primer_nombre="Ronald",      segundo_nombre="Wilfrido", primer_apellido="Gubio" },
@@ -40,7 +40,7 @@ namespace ItecSurApp.models
                 Headers = new List<string>() { "primer_nombre", "segundo_nombre", "primer_apellido" }
             };
 
-            foreach (var item in contacts)
+            foreach (var item in usuario)
             { 
                 data.Values.Add(new List<string>() { item.primer_nombre, item.segundo_nombre, item.primer_apellido });
             }
