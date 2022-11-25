@@ -39,33 +39,43 @@ namespace ItecSurApp.views.inscripcion
 
         private async void CargarCarreras()
         {
-            PeriodoModel periodo = cmbPeriodo.SelectedItem as PeriodoModel;
-            var carreras = await carreraService.GetCarrerasActivasPorPeriodo(periodo.codigo);
-            cmbCarrera.ItemsSource = new ObservableCollection<CarreraModel>(carreras);
+            if (cmbPeriodo.SelectedItem != null)
+            {
+                PeriodoModel periodo = cmbPeriodo.SelectedItem as PeriodoModel;
+                var carreras = await carreraService.GetCarrerasActivasPorPeriodo(periodo.codigo);
+                cmbCarrera.ItemsSource = new ObservableCollection<CarreraModel>(carreras);
+            }
         }
 
         private async void CargarNiveles()
         {
-            CarreraModel carrera = cmbCarrera.SelectedItem as CarreraModel;
-            var niveles = await nivelService.GetNivelesActivosPorCarrera(carrera.codigo);
-            cmbNivel.ItemsSource = new ObservableCollection<NivelModel>(niveles);
+            if (cmbCarrera.SelectedItem != null)
+            {
+                CarreraModel carrera = cmbCarrera.SelectedItem as CarreraModel;
+                var niveles = await nivelService.GetNivelesActivosPorCarrera(carrera.codigo);
+                cmbNivel.ItemsSource = new ObservableCollection<NivelModel>(niveles);
+            }
         }
 
         private async void CargarJornadas()
         {
-            NivelModel nivel = cmbNivel.SelectedItem as NivelModel;
-            var jornadas = await jornadaService.GetJornadasActivasPorNivel(nivel.codigo);
-            foreach(var jornada in jornadas)
+            if (cmbNivel.SelectedItem != null)
             {
-                jornada.nombre = jornada.nombre + " " + jornada.descripcion;
+                NivelModel nivel = cmbNivel.SelectedItem as NivelModel;
+                var jornadas = await jornadaService.GetJornadasActivasPorNivel(nivel.codigo);
+                foreach (var jornada in jornadas)
+                {
+                    jornada.nombre = jornada.nombre + " " + jornada.descripcion;
+                }
+                cmbJornada.ItemsSource = new ObservableCollection<JornadaModel>(jornadas);
             }
-            cmbJornada.ItemsSource = new ObservableCollection<JornadaModel>(jornadas);
         }
 
 
         private async void btnInscribir_Clicked(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 InscripcionModel inscripcionModel = new InscripcionModel();
                 inscripcionModel.usuario_codigo = App.Usuario.codigo;
                 JornadaModel jornadaModel = (JornadaModel)cmbJornada.SelectedItem;
@@ -76,7 +86,7 @@ namespace ItecSurApp.views.inscripcion
             }
             catch (Exception ex)
             {
-                await DisplayAlert("ERROR", "Procesando la inscripción, "+ex.Message, "Aceptar");
+                await DisplayAlert("ERROR", "Procesando la inscripción, " + ex.Message, "Aceptar");
             }
         }
 
