@@ -17,13 +17,13 @@ namespace ItecSurApp.models
                  DataType = new EnumValue<CellValues>(dataTypes)
             };
 
-        public string GenerateExcel(String fileName)
+        public string GenerateExcel(String archivo)
         {
             Environment.SetEnvironmentVariable("MONO_URI_DOTNETRELATIVEORABSOLUTE", "true");
 
             // Creando el documento de hoja de cálculo en el FilePath indicado
-            var filePath = Path.Combine(AppFolder, fileName);
-            var document = SpreadsheetDocument.Create(Path.Combine(AppFolder, fileName), SpreadsheetDocumentType.Workbook);
+            var filePath = Path.Combine(AppFolder, archivo);
+            var document = SpreadsheetDocument.Create(Path.Combine(AppFolder, archivo), SpreadsheetDocumentType.Workbook);
 
             var wbPart = document.AddWorkbookPart();
             wbPart.Workbook = new Workbook();
@@ -39,7 +39,7 @@ namespace ItecSurApp.models
                             {
                                 Id = wbPart.GetIdOfPart(part),
                                 SheetId = 1,
-                                Name = "Contacts"
+                                Name = "Usuario"
                             }
                         )
                 );
@@ -52,11 +52,11 @@ namespace ItecSurApp.models
             return filePath;
         }
 
-        public void InsertDataIntoSheet(string fileName, string sheetName, ExcelStructure data)
+        public void InsertDataIntoSheet(string archivo, string sheetName, ExcelStructure data)
         {
             Environment.SetEnvironmentVariable("MONO_URI_DOTNETRELATIVEORABSOLUTE", "true");
 
-            using (var document = SpreadsheetDocument.Open(fileName, true))
+            using (var document = SpreadsheetDocument.Open(archivo, true))
             {
                 var wbPart = document.WorkbookPart;
                 var sheets = wbPart.Workbook.GetFirstChild<Sheets>().
